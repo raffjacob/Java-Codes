@@ -29,9 +29,18 @@ public class Fila {
 			throw new RuntimeException("Fila vazia!");
 		}
 		int input = valores[primeiro];
+		valores[primeiro] = valores[ultimo];
 		primeiro = (primeiro + 1) % valores.length;
 		total--;
 		return input;
+	}
+	
+	public void mostrar() {
+		System.out.print("Fila: ");
+		for (int i=0; i<valores.length; i++) {
+			System.out.print("["+valores[i]+"]");
+		}
+		System.out.print("\n");
 	}
 
 	public boolean vazio() {
